@@ -9,8 +9,10 @@ async function getData() {
 	return puppeteer
 	.launch ({
 		args: [
-			'--no-sandbox',
-			'--disable-setuid-sandbox',
+			"--no-sandbox",
+			"--single-process",
+			"--no-zygote",
+			'--disable-setuid-sandbox'
 		]
 	})
 	.then (async browser => {
