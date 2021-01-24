@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<script src="https://code.jquery.com/jquery-2.0.2.min.js"></script>
+	<script>
+		var fetched;
+		//$(document).ready(function(){
+			//submit").click(function(){
+			  //ser=$("#user").val();
+			  //pass=$("#password").val();
+			  /*$.post("http://localhost:3000/name",{name: name}, function(data){
+				if(data === 'yes') {
+					alert("login success");
+				  }
+			  });*/
+			//});
+		  //});
+		function tableCreate(dataArray) {
+			$(dataArray).length;
+			/*var body = document.getElementsByTagName('body')[0];
+			var table = document.createElement('table');
+			tbl.style.width = '100%';
+			tbl.setAttribute('border', '1');
+			var tbody = document.createElement('tbody');
+			for (var i = 0; i < 3; i++) {
+				var tr = document.createElement('tr');
+				for (var j = 0; j < 3; j++) {
+					var td = document.createElement('td');
+					tr.appendChild(td);
+					
+					//if (i == 2 && j == 1) {
+					//	break;
+					//} else {
+					//	var td = document.createElement('td');
+					//	td.appendChild(document.createTextNode('\u0020'))
+					//	i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+					//	tr.appendChild(td);
+					//}
+				}
+				tbody.appendChild(tr);
+			}
+			table.appendChild(tbody);
+			body.appendChild(table);*/
+		}
+//tableCreate();
+		function req() {
+			$.post("http://localhost:3000/name", {name: 'name'}, function(fetched){
+            //if(fetched) {
+				//console.log(fetched);
+				var objData = JSON.parse(fetched);
+				//dataArray = Object.values(objData);
+				dataArray = Object.entries(objData);
+				dataArray1 = dataArray[0][1];
+				//console.log(dataArray1);
+				tableCreate(dataArray1);
+				//console.log(Object.values(dataArray[0][0]));//////
+				//foreach (dataArray as row) {
+				//	console.log(row);
+				//}
+				//console.log(Object.values(obj)[0]);
+				//console.log(Object.values(fetched)[0]);
+              //}
+			});
+		}
+	</script>
+	</head>
+	<body>
+		<button onClick='req()'>caviar</button>
+	</body>
+</html>

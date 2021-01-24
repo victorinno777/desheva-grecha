@@ -1,5 +1,6 @@
 *.log
-build/
-node_modules/
-.idea/
-README.md
+client/
+server/
+node/build/
+node/node_modules/
+node/README.md
