@@ -6,9 +6,13 @@ const osmosis = require('osmosis');
 
 async function getData() {
 
-
 	return puppeteer
-	.launch ()//{ headless:false }
+	.launch ({
+		args: [
+			'--no-sandbox',
+			'--disable-setuid-sandbox',
+		],
+	})
 	.then (async browser => {
 
 		//opening a new page and navigating to Reddit
