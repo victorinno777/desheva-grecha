@@ -11,7 +11,7 @@ async function getData() {
 		args: [
 			'--no-sandbox',
 			'--disable-setuid-sandbox',
-		],
+		]
 	})
 	.then (async browser => {
 
