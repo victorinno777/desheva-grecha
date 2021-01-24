@@ -1,4 +1,5 @@
 *.log
+index.js
 client/
 server/
 node/build/
