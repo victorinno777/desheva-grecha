@@ -67,6 +67,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', function (req, res) {
+		res.sendfile(index.html);
+	}
+});
+
 app.post('/name', async function (req, res) {
 	try {
 		const result = await getData();
