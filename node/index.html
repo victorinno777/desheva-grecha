@@ -16,18 +16,23 @@
 			//});
 		  //});
 		function tableCreate(dataArray) {
-			$(dataArray).length;
-			/*var body = document.getElementsByTagName('body')[0];
+			rows = $(dataArray).length;
+			//el = Object.entries(dataArray[1])[1][1];
+			//console.log(el);
+			var body = document.getElementsByTagName('body')[0];
 			var table = document.createElement('table');
-			tbl.style.width = '100%';
-			tbl.setAttribute('border', '1');
+			table.style.width = '100%';
+			table.setAttribute('border', '1');
 			var tbody = document.createElement('tbody');
-			for (var i = 0; i < 3; i++) {
+			for (var i = 0; i < rows; i++) {
 				var tr = document.createElement('tr');
-				for (var j = 0; j < 3; j++) {
+				element = Object.entries(dataArray[i]);
+				for (var j = 0; j < 2; j++) {
 					var td = document.createElement('td');
+					var a = document.createElement('a');
+					a.textContent = element[j][1];
+					td.appendChild(a);
 					tr.appendChild(td);
-					
 					//if (i == 2 && j == 1) {
 					//	break;
 					//} else {
@@ -40,9 +45,9 @@
 				tbody.appendChild(tr);
 			}
 			table.appendChild(tbody);
-			body.appendChild(table);*/
+			body.appendChild(table);
 		}
-//tableCreate();
+
 		function req() {
 			$.post("http://localhost:3000/name", {name: 'name'}, function(fetched){
             //if(fetched) {

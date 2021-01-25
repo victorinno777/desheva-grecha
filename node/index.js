@@ -1,7 +1,7 @@
 //var cheerio = require('cheerio');
 //const axios = require('axios');
 const puppeteer = require ('puppeteer');
-const osmosis = require('osmosis');
+//const osmosis = require('osmosis');
 
 
 async function getData() {
@@ -17,7 +17,7 @@ async function getData() {
 	})
 	.then (async browser => {
 
-		//opening a new page and navigating to Reddit
+		//opening a new page
 		const page = await browser.newPage();
 		await page.goto('https://www.google.com/search?q=%D0%B3%D1%80%D0%B5%D1%87%D0%BA%D0%B0+%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C&tbs=p_ord:p,cat:4684,vw:g,init_ar:SgVKAwjMJA%3D%3D,ss:44&tbm=shop');
 		await page.waitForSelector('body');
@@ -31,13 +31,13 @@ async function getData() {
 		allPosts.forEach (item => {
 			let postTitle = item.querySelector('h4').innerText;
 			let postURL = item.querySelector('a').getAttribute('href');
-			let postDescription = '';
+			let postPrice = '';
 			try {
-				postDescription = item.querySelector('span span').innerText;
+				postPrice = item.querySelector('span span').innerText;
 			} catch (err) {}
 			scrapeItems.push ({
 				postTitle: postTitle,
-				postDescription: postDescription,
+				postPrice: postPrice,
 				postURL: postURL,
 			});
 		});
@@ -59,26 +59,23 @@ async function getData() {
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const router = express.Router();
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.get('/',(req, res) => {
-	res.sendfile("index.html");
-});
+app.use(cors());
 
 app.post('/name', async function (req, res) {
 	try {
 		const result = await getData();
-		JSONdata = JSON.stringify(result);
-		res.end(JSONdata);
+		res.json(result);
 	} catch (e) {
 		res.end(e.message || e.toString());
 	}
 });
 
-app.listen(3000,() => {
+app.listen(3001,() => {
 	console.log("Started on PORT 3000");
 })

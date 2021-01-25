@@ -4,4 +4,4 @@ client/
 server/
 node/build/
 node/node_modules/
-node/README.md
+node/index.html
