@@ -2,6 +2,6 @@
 no.js
 client/
 server/
-node/build/
-node/node_modules/
+node/
 node/index.html
+index.html
