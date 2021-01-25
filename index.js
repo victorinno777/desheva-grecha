@@ -69,7 +69,6 @@ app.use(cors());
 
 app.get('/', function (req, res) {
 		res.sendfile(index.html);
-	}
 });
 
 app.post('/name', async function (req, res) {
