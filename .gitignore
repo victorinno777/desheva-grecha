@@ -3,4 +3,4 @@ no.js
 client/
 server/
 node/
-node/index.html
+app.js
