@@ -3,3 +3,4 @@ client/
 node/
 old/
 server/
+index.js
