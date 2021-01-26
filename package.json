@@ -41,6 +41,6 @@
   },
   "engines": {
     "node": "15.x",
-    "npm": "7.x"
+    "npm": "lts"
   }
 }
