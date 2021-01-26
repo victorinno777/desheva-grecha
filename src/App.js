@@ -27,7 +27,7 @@ function getMinIndices(array, num) { // array to sort, number to return
 	for(i = 0; i < num; i++)  {
 		indices.push(array.indexOf(array[i]));
 	}                  
-    return indices;    // indices of sorted array
+    return indices; // indices of sorted array
 }
 
 function getData(json) {
@@ -60,7 +60,7 @@ class App extends React.Component {
 	}
 	
 	async componentDidMount() {
-		const response = await fetch('http://localhost:3000/name', {
+		const response = await fetch('https://desheva-grecha-server.herokuapp.com/fetch', {
 			method: 'POST',
 			mode: 'cors',
 			cache: 'no-cache',
