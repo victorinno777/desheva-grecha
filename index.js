@@ -1,8 +1,4 @@
-//var cheerio = require('cheerio');
-//const axios = require('axios');
 const puppeteer = require ('puppeteer');
-//const osmosis = require('osmosis');
-
 
 async function getData() {
 
@@ -74,11 +70,7 @@ app.use(function (req, res, next) {
 	next();
 });
 
-/*app.get('/', function (req, res) {
-	res.sendfile(index.html);
-});*/
-
-app.post('/name', async function (req, res) {
+app.post('/fetch', async function (req, res) {
 	try {
 		const result = await getData();
 		res.json(result);
@@ -86,7 +78,3 @@ app.post('/name', async function (req, res) {
 		res.end(e.message || e.toString());
 	}
 });
-
-/*app.listen(3001,() => {
-	console.log("Started on PORT 3000");
-})*/
