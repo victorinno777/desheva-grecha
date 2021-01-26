@@ -75,7 +75,3 @@ app.post('/fetch', async function (req, res) {
 		res.end(e.message || e.toString());
 	}
 });
-
-app.listen(3001,() => {
-	console.log("Server started on PORT 3001");
-})
