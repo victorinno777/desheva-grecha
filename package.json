@@ -40,7 +40,7 @@
     ]
   },
   "engines": {
-    "node": "lts",
+    "node": "14.x",
     "npm": "lts"
   }
 }
