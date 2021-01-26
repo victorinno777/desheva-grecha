@@ -16,7 +16,7 @@
     "morgan": "~1.9.1"
   },
   "scripts": {
-	"start": "node index && node ./bin/www"
+	"start": "node index && node bin/www"
   },
   "engines": {
     "node": "15.x",
